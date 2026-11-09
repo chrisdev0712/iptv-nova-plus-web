@@ -345,7 +345,7 @@ export const App: React.FC = () => {
                 </ul>
               </div>
               <a
-                href="https://github.com/chrisdev0712/iptv-nova-plus-web/releases/download/v1.0.2/IPTV_Nova_Plus_Setup.exe"
+                href="https://github.com/chrisdev0712/iptv-nova-plus-web/releases/download/v1.0.2/IPTV.Nova.Plus.1.0.2.exe"
                 className="w-full py-3 px-4 rounded-xl font-bold text-sm text-white bg-blue-600 hover:bg-blue-500 flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/20 transition-all"
               >
                 <Download className="w-4 h-4" />
