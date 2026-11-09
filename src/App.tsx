@@ -445,7 +445,7 @@ export const App: React.FC = () => {
                 </ul>
               </div>
               <a
-                href="https://app.iptvnovaplus.com"
+                href="https://iptv-nova-plus-app.vercel.app"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full py-3 px-4 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 flex items-center justify-center space-x-2 shadow-lg shadow-indigo-500/25 transition-all"
