@@ -22,6 +22,7 @@ import {
   ArrowRight,
   Share2
 } from 'lucide-react';
+import { ActivationSection } from './components/ActivationSection';
 
 export const App: React.FC = () => {
   const [copiedLink, setCopiedLink] = useState(false);
@@ -90,20 +91,58 @@ export const App: React.FC = () => {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
+            <a
+              href="https://iptv-nova-plus-app.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center space-x-1.5 transition-colors"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+              <span>Web Player</span>
+              <ExternalLink className="w-3 h-3 opacity-70" />
+            </a>
             <a href="#features" className="hover:text-cyan-400 transition-colors">Características</a>
             <a href="#downloads" className="hover:text-cyan-400 transition-colors">Descargas</a>
-            <a href="#devices" className="hover:text-cyan-400 transition-colors">Dispositivos</a>
+            <a href="#activate" className="hover:text-cyan-400 text-cyan-300 font-bold transition-colors">Cargar por MAC</a>
+            <a href="#downloads" className="hover:text-cyan-400 transition-colors">Dispositivos</a>
             <a href="#faq" className="hover:text-cyan-400 transition-colors">Preguntas</a>
           </nav>
 
           {/* Action CTA */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2.5 sm:space-x-3">
+            {/* Direct Access to Web Player (Prominent Header Button) */}
+            <a
+              href="https://iptv-nova-plus-app.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="relative group flex items-center space-x-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-black text-xs sm:text-sm text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 shadow-lg shadow-emerald-500/25 transition-all transform hover:scale-105 active:scale-95 border border-emerald-300/60"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-950"></span>
+              </span>
+              <Play className="w-3.5 h-3.5 fill-slate-950 text-slate-950" />
+              <span>Web Player</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform hidden xs:inline" />
+            </a>
+
+            <a
+              href="#activate"
+              className="hidden sm:flex items-center space-x-2 px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-cyan-300 bg-cyan-950/60 border border-cyan-500/40 hover:bg-cyan-900/60 hover:text-white transition-all shadow-md"
+            >
+              <Tv className="w-4 h-4 text-cyan-400" />
+              <span>Cargar por MAC</span>
+            </a>
+
             <a
               href="#downloads"
-              className="px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/25 transition-all transform hover:scale-[1.03] active:scale-[0.98] flex items-center space-x-2"
+              className="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-slate-800/90 hover:bg-slate-700 border border-slate-700 shadow-md transition-all flex items-center space-x-2"
             >
               <Download className="w-4 h-4" />
-              <span>Descargas</span>
+              <span className="hidden sm:inline">Descargas</span>
             </a>
           </div>
         </div>
@@ -112,10 +151,26 @@ export const App: React.FC = () => {
       {/* Hero Section */}
       <section className="relative z-10 pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Release Badge */}
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-bold mb-8 backdrop-blur-md animate-pulse">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Versión Oficial 1.0.2 • Multiplataforma</span>
+          {/* Release Badge & Quick Player Link */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-bold backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Versión Oficial 1.0.2 • Multiplataforma</span>
+            </div>
+
+            <a
+              href="https://iptv-nova-plus-app.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs font-bold backdrop-blur-md hover:bg-emerald-500/25 transition-all shadow-sm shadow-emerald-500/20"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+              <span>Web Player 100% En Vivo</span>
+              <ChevronRight className="w-3.5 h-3.5 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
 
           {/* Main Headline */}
@@ -133,20 +188,41 @@ export const App: React.FC = () => {
 
           {/* Hero CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* Primary Eye-catching Direct Access Button */}
+            <a
+              href="https://iptv-nova-plus-app.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="relative group w-full sm:w-auto px-8 py-4 rounded-2xl font-black text-base text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 shadow-2xl shadow-emerald-500/35 hover:shadow-emerald-500/60 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center space-x-3.5 border border-white/50"
+            >
+              <span className="relative flex h-3.5 w-3.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-60"></span>
+                <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-slate-950"></span>
+              </span>
+              <div className="w-9 h-9 rounded-xl bg-slate-950/15 flex items-center justify-center">
+                <Play className="w-5 h-5 fill-slate-950 text-slate-950 translate-x-0.5" />
+              </div>
+              <div className="text-left">
+                <div className="text-[10px] tracking-widest uppercase font-black text-slate-800 leading-none">Acceso Directo</div>
+                <div className="text-lg font-black leading-tight text-slate-950">Abrir Web Player</div>
+              </div>
+              <ExternalLink className="w-4 h-4 text-slate-900 opacity-75 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+
             <a
               href="#downloads"
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl font-extrabold text-base text-slate-950 bg-white hover:bg-slate-200 shadow-xl shadow-white/10 transition-all transform hover:scale-105 flex items-center justify-center space-x-2.5"
+              className="w-full sm:w-auto px-7 py-4 rounded-2xl font-extrabold text-base text-white bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 shadow-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2.5"
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-5 h-5 text-cyan-400" />
               <span>Ver Descargas Disponibles</span>
             </a>
 
             <a
-              href="#features"
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl font-extrabold text-base text-white bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 shadow-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2.5"
+              href="#activate"
+              className="w-full sm:w-auto px-7 py-4 rounded-2xl font-extrabold text-base text-cyan-300 bg-cyan-950/50 hover:bg-cyan-900/60 border border-cyan-500/40 shadow-lg transition-all transform hover:scale-105 flex items-center justify-center space-x-2.5"
             >
-              <Sparkles className="w-5 h-5 text-cyan-400" />
-              <span>Conocer Características</span>
+              <Tv className="w-5 h-5 text-cyan-400" />
+              <span>Cargar por MAC</span>
             </a>
           </div>
 
@@ -172,13 +248,24 @@ export const App: React.FC = () => {
                     <p className="text-xs text-slate-400">Diseñado especialmente para mando a distancia con navegación espacial</p>
                   </div>
                 </div>
-                <a
-                  href="#downloads"
-                  className="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center space-x-1.5 transition-colors"
-                >
-                  <span>Descargar</span>
-                  <ChevronRight className="w-4 h-4" />
-                </a>
+                <div className="flex items-center space-x-2">
+                  <a
+                    href="https://iptv-nova-plus-app.vercel.app"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2 rounded-lg bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-black text-xs flex items-center space-x-1.5 transition-colors shadow-md shadow-emerald-500/20"
+                  >
+                    <Play className="w-3.5 h-3.5 fill-slate-950" />
+                    <span>Abrir Web Player</span>
+                  </a>
+                  <a
+                    href="#downloads"
+                    className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center space-x-1.5 transition-colors border border-slate-700"
+                  >
+                    <span>Descargar</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -486,6 +573,9 @@ export const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Activation by MAC Section (Remote Xtream Codes Upload) */}
+      <ActivationSection />
+
       {/* FAQ Section */}
       <section id="faq" className="relative z-10 py-20 bg-slate-900/40 border-t border-slate-800/80">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -543,6 +633,25 @@ export const App: React.FC = () => {
           </div>
         </div>
       </footer>
+      {/* Floating Web Player Direct Access Button (Always accessible anywhere on the page) */}
+      <a
+        href="https://iptv-nova-plus-app.vercel.app"
+        target="_blank"
+        rel="noreferrer"
+        title="Acceso directo al Web Player"
+        className="fixed bottom-6 right-6 z-50 group flex items-center space-x-2.5 px-4 sm:px-5 py-3 rounded-full bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 text-slate-950 font-black text-xs sm:text-sm shadow-2xl shadow-emerald-500/40 hover:shadow-emerald-500/70 border border-white/60 transition-all transform hover:scale-110 active:scale-95"
+      >
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-slate-950"></span>
+        </span>
+        <div className="w-6 h-6 rounded-full bg-slate-950/15 flex items-center justify-center">
+          <Play className="w-3.5 h-3.5 fill-slate-950 text-slate-950 translate-x-0.5" />
+        </div>
+        <span className="tracking-tight hidden xs:inline">Web Player Directo</span>
+        <span className="tracking-tight xs:hidden">Web Player</span>
+        <ExternalLink className="w-3.5 h-3.5 text-slate-950 opacity-75 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+      </a>
     </div>
   );
 };
